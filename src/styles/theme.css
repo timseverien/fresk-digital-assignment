@@ -1,3 +1,11 @@
 :root {
 	--font-body: var(--font-sans-serif);
+
+	--color-background: var(--oc-gray-0);
+	--color-text-on-background: var(--oc-gray-9);
+
+	--color-danger-background: var(--oc-red-1);
+	--color-danger-foreground: var(--oc-red-8);
+	--color-warning-background: var(--oc-yellow-1);
+	--color-warning-foreground: var(--oc-yellow-9);
 }

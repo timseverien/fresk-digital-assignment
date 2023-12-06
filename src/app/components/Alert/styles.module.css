@@ -1,0 +1,21 @@
+.container {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: var(--space-xs);
+	align-items: center;
+
+	padding: var(--space-xs);
+
+	background-color: var(--alert-background);
+
+	border-radius: var(--space-3xs);
+}
+
+.icon {
+	color: var(--alert-icon-color);
+}
+
+.icon svg {
+	block-size: var(--step--1);
+	inline-size: auto;
+}

@@ -4,13 +4,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
+    "axios": "^1.6.2",
+    "lucide-react": "^0.294.0",
     "next": "14.0.3",
     "open-color": "^1.9.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -19,6 +23,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
     "eslint-plugin-prettier": "^5.0.1",
+    "jest": "^29.7.0",
     "prettier-eslint": "^16.1.2",
     "typescript": "^5"
   }
