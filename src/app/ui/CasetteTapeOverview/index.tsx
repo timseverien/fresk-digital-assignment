@@ -126,6 +126,7 @@ export function CasetteTapeOverview(props: { casetteTapes: CasetteTape[] }) {
 									src={casette.imageUrl ?? casette.thumbnailUrl}
 									alt=""
 									className={styles.itemThumbnail}
+									loading="lazy"
 								/>
 							</Link>
 						</li>

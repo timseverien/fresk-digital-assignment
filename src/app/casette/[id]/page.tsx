@@ -18,7 +18,7 @@ export default async function Page(props: { params: { id: string } }) {
 
 		return (
 			<div className={styles.layout}>
-				<img src={casetteTape.imageUrl} alt="" />
+				<img src={casetteTape.imageUrl} alt="" loading="lazy" />
 
 				<div>
 					<SpecificationList
