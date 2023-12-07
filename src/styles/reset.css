@@ -6,8 +6,15 @@
 input,
 select,
 textarea {
+	padding-block: var(--space-3xs);
+	padding-inline: var(--space-2xs);
+
+	background: none;
+	border: 1px solid currentColor;
+	border-radius: var(--space-3xs);
+
+	color: inherit;
 	font-size: inherit;
-	padding: var(--space-3xs);
 }
 
 button {

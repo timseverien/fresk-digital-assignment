@@ -1,7 +1,7 @@
 .layout {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 24em);
-	gap: var(--space-m);
+	gap: var(--space-l);
 
 	list-style-type: none;
 	padding: 0;
@@ -9,7 +9,7 @@
 
 .filterForm {
 	display: flex;
-	gap: var(--space-m);
+	gap: var(--space-xs);
 	flex-flow: row wrap;
 }
 
