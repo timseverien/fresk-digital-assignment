@@ -2,12 +2,10 @@
 	display: flex;
 	flex-flow: row nowrap;
 	gap: var(--space-xs);
-	align-items: center;
 
 	padding: var(--space-xs);
 
 	background-color: var(--alert-background);
-
 	border-radius: var(--space-3xs);
 }
 

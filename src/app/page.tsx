@@ -17,10 +17,12 @@ export default async function Page() {
 	} catch {
 		return (
 			<main>
-				<Flow>
-					<AlertError>Unable to load casette tapes!</AlertError>
-					<p>Please clean the casette tray.</p>
-				</Flow>
+				<AlertError>
+					<Flow>
+						<p>Unable to load casette tapes!</p>
+						<p>Please clean the casette tray.</p>
+					</Flow>
+				</AlertError>
 			</main>
 		);
 	}

@@ -34,10 +34,14 @@ export default async function Page(props: { params: { id: string } }) {
 		);
 	} catch {
 		return (
-			<Flow as="main">
-				<AlertError>Unable to load casette tape!</AlertError>
-				<p>Please clean the casette tray.</p>
-			</Flow>
+			<main>
+				<AlertError>
+					<Flow>
+						<p>Unable to load casette tape!</p>
+						<p>Please clean the casette tray.</p>
+					</Flow>
+				</AlertError>
+			</main>
 		);
 	}
 }
