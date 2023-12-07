@@ -22,8 +22,6 @@
 	block-size: auto;
 	inline-size: 100%;
 
-	background-color: var(--oc-gray-2);
-
 	transition: rotate 0.25s;
 	will-change: rotate;
 }
