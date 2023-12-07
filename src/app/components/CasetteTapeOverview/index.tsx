@@ -97,7 +97,10 @@ export function CasetteTapeOverview(props: { casetteTapes: CasetteTape[] }) {
 		}))
 		.sort((a, b) => a.text.localeCompare(b.text));
 
-	const casetteTapesSorted = casetteTapes.sort((a, b) => a.brand.localeCompare(b.brand));
+	const casetteTapesSorted = casetteTapes.sort((a, b) => {
+		const brandSortResult = a.brand.localeCompare(b.brand);
+		return brandSortResult !== 0 ? brandSortResult : a.id.localeCompare(b.id);
+	});
 
 	return (
 		<Flow space="xl">
