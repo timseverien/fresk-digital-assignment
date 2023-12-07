@@ -1,7 +1,7 @@
 'use client';
 
 import { CasetteTapeFilterSettings, useCasetteTapeFilter } from '@/app/lib/casetteTape';
-import { CasetteTape } from '@/data/tapedeck';
+import { CasetteTape } from '@/core/tapedeck';
 import Link from 'next/link';
 import { AlertWarning } from '../Alert';
 import { Flow } from '../Flow';

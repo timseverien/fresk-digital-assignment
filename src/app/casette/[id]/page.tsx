@@ -17,20 +17,22 @@ export default async function Page(props: { params: { id: string } }) {
 		}
 
 		return (
-			<div className={styles.layout}>
-				<img src={casetteTape.imageUrl} alt="" loading="lazy" />
+			<main>
+				<div className={styles.layout}>
+					<img className={styles.image} src={casetteTape.imageUrl} alt="" loading="lazy" />
 
-				<div>
-					<SpecificationList
-						specifications={[
-							{ name: 'Type', value: casetteTape.type },
-							{ name: 'Brand', value: casetteTape.brand },
-							{ name: 'Color', value: casetteTape.color },
-							{ name: 'Playing time', value: casetteTape.playingTime },
-						]}
-					/>
+					<div>
+						<SpecificationList
+							specifications={[
+								{ name: 'Type', value: casetteTape.type },
+								{ name: 'Brand', value: casetteTape.brand },
+								{ name: 'Color', value: casetteTape.color },
+								{ name: 'Playing time', value: casetteTape.playingTime },
+							]}
+						/>
+					</div>
 				</div>
-			</div>
+			</main>
 		);
 	} catch {
 		return (
