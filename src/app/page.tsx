@@ -1,7 +1,6 @@
-import { AlertError } from '@/app/ui/Alert';
 import { CasetteTapeOverview } from '@/app/ui/CasetteTapeOverview';
-import { Flow } from '@/app/ui/Flow';
 import { createClient, getCasetteTapes } from '@/data/tapedeck';
+import { CasetteLoadError } from './ui/CasetteLoadError';
 
 export default async function Page() {
 	const client = createClient(process.env.TAPEDECK_API_KEY as string);
@@ -17,12 +16,7 @@ export default async function Page() {
 	} catch {
 		return (
 			<main>
-				<AlertError>
-					<Flow>
-						<p>Unable to load casette tapes!</p>
-						<p>Please clean the casette tray.</p>
-					</Flow>
-				</AlertError>
+				<CasetteLoadError />
 			</main>
 		);
 	}

@@ -1,5 +1,4 @@
-import { AlertError } from '@/app/ui/Alert';
-import { Flow } from '@/app/ui/Flow';
+import { CasetteLoadError } from '@/app/ui/CasetteLoadError';
 import { SpecificationList } from '@/app/ui/SpecificationList';
 import { createClient, getCasetteTapes } from '@/data/tapedeck';
 import styles from './styles.module.css';
@@ -37,12 +36,7 @@ export default async function Page(props: { params: { id: string } }) {
 	} catch {
 		return (
 			<main>
-				<AlertError>
-					<Flow>
-						<p>Unable to load casette tape!</p>
-						<p>Please clean the casette tray.</p>
-					</Flow>
-				</AlertError>
+				<CasetteLoadError />
 			</main>
 		);
 	}
