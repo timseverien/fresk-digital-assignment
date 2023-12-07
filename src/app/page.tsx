@@ -7,8 +7,8 @@ export default async function Page() {
 	const casetteTapes = await getCasetteTapes(client);
 
 	return (
-		<div className={styles.container}>
+		<main className={styles.container}>
 			<CasetteTapeOverview casetteTapes={casetteTapes} />
-		</div>
+		</main>
 	);
 }
