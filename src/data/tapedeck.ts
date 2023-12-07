@@ -1,3 +1,4 @@
+import { CasetteTape } from '@/core/tapedeck';
 import axios, { AxiosInstance } from 'axios';
 import { z } from 'zod';
 
@@ -16,18 +17,6 @@ const casetteTapeResponseSchema = z.record(
 			.or(z.object({ type: z.string() })),
 	),
 );
-
-export type CasetteTape = {
-	id: string;
-	type: string;
-	brand: string;
-	color: string;
-	playingTime: string;
-
-	imageUrl: string;
-	pageUrl: string;
-	thumbnailUrl: string;
-};
 
 export function createClient(apiKey: string): TapedeckClient {
 	return axios.create({

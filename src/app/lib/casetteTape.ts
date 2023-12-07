@@ -1,4 +1,4 @@
-import { CasetteTape } from '@/data/tapedeck';
+import { CasetteTape } from '@/core/tapedeck';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 export type CasetteTapeFilterSettings = {
