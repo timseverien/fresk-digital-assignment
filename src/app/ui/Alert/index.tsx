@@ -5,13 +5,16 @@ import styles from './styles.module.css';
 export function Alert(props: {
 	children: ReactNode;
 	icon: ReactNode;
-	background: string;
-	iconColor: string;
+	background?: string;
+	iconColor?: string;
 }) {
 	return (
 		<div
 			className={styles.container}
-			style={{ '--alert-background': props.background, '--alert-icon-color': props.iconColor }}
+			style={{
+				'--alert-background': props.background ?? '',
+				'--alert-icon-color': props.iconColor ?? '',
+			}}
 		>
 			<div className={styles.icon}>{props.icon}</div>
 			<div>{props.children}</div>

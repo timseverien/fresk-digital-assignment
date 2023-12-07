@@ -1,6 +1,12 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
-module.exports = {
-	preset: 'ts-jest',
-	testEnvironment: 'node',
+const nextJest = require('next/jest');
+const createJestConfig = nextJest({
+	dir: './',
+});
+
+/** @type {import('ts-jest').JestConfigWithTsJest} */
+const customJestConfig = {
 	collectCoverage: true,
+	testEnvironment: 'jsdom',
 };
+module.exports = createJestConfig(customJestConfig);
