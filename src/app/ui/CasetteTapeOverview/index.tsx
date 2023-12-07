@@ -5,6 +5,7 @@ import { CasetteTape } from '@/data/tapedeck';
 import Link from 'next/link';
 import { AlertWarning } from '../Alert';
 import { Flow } from '../Flow';
+import { CLASSNAME_CONTENT, CLASSNAME_FULL, Layout } from '../Layout';
 import styles from './styles.module.css';
 
 type Option<T extends any> = { value: T; text: string };
@@ -104,17 +105,19 @@ export function CasetteTapeOverview(props: { casetteTapes: CasetteTape[] }) {
 	});
 
 	return (
-		<Flow space="xl">
-			<CasetteTapeFilter
-				brandOptions={brandOptions}
-				colorOptions={colorOptions}
-				playingTimeOptions={playingTimeOptions}
-				settings={filterSettings}
-				onChange={(nextFilterSettings) => setFilterSettings(nextFilterSettings)}
-			/>
+		<Layout>
+			<div className={CLASSNAME_CONTENT}>
+				<CasetteTapeFilter
+					brandOptions={brandOptions}
+					colorOptions={colorOptions}
+					playingTimeOptions={playingTimeOptions}
+					settings={filterSettings}
+					onChange={(nextFilterSettings) => setFilterSettings(nextFilterSettings)}
+				/>
+			</div>
 
 			{casetteTapes.length > 0 ? (
-				<ul role="list" className={styles.layout}>
+				<ul role="list" className={`${CLASSNAME_FULL} ${styles.layout}`}>
 					{casetteTapesSorted.map((casette) => (
 						<li key={casette.id}>
 							<Link
@@ -138,6 +141,6 @@ export function CasetteTapeOverview(props: { casetteTapes: CasetteTape[] }) {
 					<button onClick={() => resetFilterSettings()}>Reset filters</button>
 				</Flow>
 			)}
-		</Flow>
+		</Layout>
 	);
 }
