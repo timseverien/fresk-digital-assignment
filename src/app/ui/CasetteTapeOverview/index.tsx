@@ -136,10 +136,12 @@ export function CasetteTapeOverview(props: { casetteTapes: CasetteTape[] }) {
 					))}
 				</ul>
 			) : (
-				<Flow>
-					<AlertWarning>No results for these filters</AlertWarning>
-					<button onClick={() => resetFilterSettings()}>Reset filters</button>
-				</Flow>
+				<div className={CLASSNAME_CONTENT}>
+					<Flow>
+						<AlertWarning>No results for these filters</AlertWarning>
+						<button onClick={() => resetFilterSettings()}>Reset filters</button>
+					</Flow>
+				</div>
 			)}
 		</Layout>
 	);
