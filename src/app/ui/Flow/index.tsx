@@ -1,17 +1,21 @@
 import { ReactNode } from 'react';
 import styles from './styles.module.css';
 
-export function Flow(props: { children: ReactNode; space?: 'xs' | 's' | 'm' | 'l' | 'xl' }) {
+export function Flow(props: {
+	as?: keyof JSX.IntrinsicElements;
+	children: ReactNode;
+	space?: 'xs' | 's' | 'm' | 'l' | 'xl';
+}) {
+	const Element = props.as ?? 'div';
+
 	return (
-		<div>
-			<div
-				className={styles.container}
-				style={{
-					'--flow-space': `var(--space-${props.space ?? 'xs'})`,
-				}}
-			>
-				{props.children}
-			</div>
-		</div>
+		<Element
+			className={styles.container}
+			style={{
+				'--flow-space': `var(--space-${props.space ?? 'xs'})`,
+			}}
+		>
+			{props.children}
+		</Element>
 	);
 }

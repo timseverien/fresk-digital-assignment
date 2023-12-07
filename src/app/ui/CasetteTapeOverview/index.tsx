@@ -2,6 +2,7 @@
 
 import { CasetteTapeFilterSettings, useCasetteTapeFilter } from '@/app/lib/casetteTape';
 import { CasetteTape } from '@/data/tapedeck';
+import Link from 'next/link';
 import { AlertWarning } from '../Alert';
 import { Flow } from '../Flow';
 import styles from './styles.module.css';
@@ -24,7 +25,7 @@ function CasetteTapeFilter(props: {
 					onChange={(e) => props.onChange({ ...props.settings, brand: e.currentTarget.value })}
 					value={props.settings.brand ?? ''}
 				>
-					<option value="">All</option>
+					<option value="">Any</option>
 					{props.brandOptions.map((brand) => (
 						<option key={brand.value} value={brand.value}>
 							{brand.text}
@@ -40,7 +41,7 @@ function CasetteTapeFilter(props: {
 					onChange={(e) => props.onChange({ ...props.settings, color: e.currentTarget.value })}
 					value={props.settings.color ?? ''}
 				>
-					<option value="">All</option>
+					<option value="">Any</option>
 					{props.colorOptions.map((color) => (
 						<option key={color.value} value={color.value}>
 							{color.text}
@@ -58,7 +59,7 @@ function CasetteTapeFilter(props: {
 					}
 					value={props.settings.playingTime ?? ''}
 				>
-					<option value="">All</option>
+					<option value="">Any</option>
 					{props.playingTimeOptions.map((playingTimeOptions) => (
 						<option key={playingTimeOptions.value} value={playingTimeOptions.value}>
 							{playingTimeOptions.text}
@@ -116,8 +117,8 @@ export function CasetteTapeOverview(props: { casetteTapes: CasetteTape[] }) {
 				<ul role="list" className={styles.layout}>
 					{casetteTapesSorted.map((casette) => (
 						<li key={casette.id}>
-							<a
-								href={casette.pageUrl}
+							<Link
+								href={`/casette/${casette.id}/`}
 								className={styles.itemLink}
 								style={{ '--casette-color': casette.color }}
 							>
@@ -126,7 +127,7 @@ export function CasetteTapeOverview(props: { casetteTapes: CasetteTape[] }) {
 									alt=""
 									className={styles.itemThumbnail}
 								/>
-							</a>
+							</Link>
 						</li>
 					))}
 				</ul>

@@ -9,3 +9,11 @@ body {
 	background-color: var(--color-background);
 	color: var(--color-text-on-background);
 }
+
+label {
+	display: block;
+	margin-block-end: var(--space-3xs);
+
+	font-weight: bold;
+	font-size: var(--step--1);
+}

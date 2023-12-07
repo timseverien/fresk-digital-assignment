@@ -53,15 +53,16 @@ export async function getCasetteTapes(client: TapedeckClient): Promise<CasetteTa
 
 		return {
 			id,
-			type: props.find((p): p is { type: string } => 'type' in p)?.type ?? 'other',
-			brand: props.find((p): p is { brand: string } => 'brand' in p)?.brand ?? '',
-			color: props.find((p): p is { color: string } => 'color' in p)?.color ?? '',
+			type: props.find((p): p is { type: string } => 'type' in p)?.type || 'Unspecified',
+			brand: props.find((p): p is { brand: string } => 'brand' in p)?.brand || 'Unspecified',
+			color: props.find((p): p is { color: string } => 'color' in p)?.color || 'Unspecified',
 			playingTime:
-				props.find((p): p is { playingTime: string } => 'playingTime' in p)?.playingTime ?? '',
+				props.find((p): p is { playingTime: string } => 'playingTime' in p)?.playingTime ||
+				'Unspecified',
 
-			imageUrl: props.find((p): p is { img: string } => 'img' in p)?.img ?? '',
-			pageUrl: props.find((p): p is { page: string } => 'page' in p)?.page ?? '',
-			thumbnailUrl: props.find((p): p is { thumb: string } => 'thumb' in p)?.thumb ?? '',
+			imageUrl: props.find((p): p is { img: string } => 'img' in p)?.img || '',
+			pageUrl: props.find((p): p is { page: string } => 'page' in p)?.page || '',
+			thumbnailUrl: props.find((p): p is { thumb: string } => 'thumb' in p)?.thumb || '',
 		};
 	});
 }
